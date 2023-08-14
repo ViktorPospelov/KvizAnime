@@ -13,6 +13,7 @@ public class cat : MonoBehaviour
         if (collision.otherCollider == collider2D)
         {
             cry.SetActive(true);
+            GameControler.EndGame?.Invoke();
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class GameControler : MonoBehaviour
     [SerializeField] private Button twoPlayer;
     
     private Pole _mainPole;
+    public static Action EndGame;
    void Start()
    {
        twoPlayer.onClick.AddListener(() =>
@@ -18,12 +20,20 @@ public class GameControler : MonoBehaviour
            _mainPole.SetBlock(false);
            mainMenu.SetActive(false);
        });
-       
+       EndGame += NewGame;
    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private void NewGame()
+   {
+       _mainPole.SetBlock(true);
+       StartCoroutine(NewGameCor());
+
+   }
+
+   private IEnumerator NewGameCor()
+   {
+       yield return new WaitForSeconds(5f);
+       mainMenu.SetActive(true);
+       Destroy(_mainPole.gameObject);
+   }
 }
