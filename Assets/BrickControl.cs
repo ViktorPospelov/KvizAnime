@@ -11,10 +11,15 @@ public class BrickControl : MonoBehaviour
         _button = GetComponent<Button>();
         _button.onClick.AddListener(() =>
         {
-            _button.onClick.RemoveAllListeners();
-            Destroy(gameObject);
+            Click();
         });
     }
 
+    public void Click()
+    {
+        Pole.ClikMove?.Invoke();
+        _button.onClick.RemoveAllListeners();
+        Destroy(gameObject);
+    }
    
 }
