@@ -8,16 +8,30 @@ public class ADV : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject obj;
+    [SerializeField] private GameObject mainM;
 
     private Coroutine advCoroutine;
+    private Coroutine advRew;
     private int nadoeda = 2;
     void Start()
     {
         advCoroutine = StartCoroutine(AdvMove());
+        advRew = StartCoroutine(AdvRew());
+    }
+
+    private IEnumerator AdvRew()
+    {
+        yield return new WaitForSeconds(330f);
+        while (!mainM.activeSelf)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+        YandexGame.ReviewShow(true);
     }
 
     private IEnumerator AdvMove()
     {
+        YandexGame.ReviewShow(true);
         obj.SetActive(false);
         yield return new WaitForSeconds(Random.Range(100*nadoeda,120*nadoeda)*1f);
         obj.SetActive(true);
