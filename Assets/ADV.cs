@@ -21,7 +21,7 @@ public class ADV : MonoBehaviour
 
     private IEnumerator AdvRew()
     {
-        yield return new WaitForSeconds(330f);
+        yield return new WaitForSeconds(20f);
         while (!mainM.activeSelf)
         {
             yield return new WaitForSeconds(1f);
