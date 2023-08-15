@@ -19,7 +19,7 @@ public class ADV : MonoBehaviour
     private IEnumerator AdvMove()
     {
         obj.SetActive(false);
-        yield return new WaitForSeconds(Random.Range(75*nadoeda,100*nadoeda)*1f);
+        yield return new WaitForSeconds(Random.Range(100*nadoeda,120*nadoeda)*1f);
         obj.SetActive(true);
         int i = 5;
         text.text = $"Реклама: {i}";
