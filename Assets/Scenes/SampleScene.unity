@@ -920,6 +920,7 @@ MonoBehaviour:
   text: {fileID: 632327872}
   obj: {fileID: 1725369217}
   mainM: {fileID: 1636156548}
+  nadoeda: 2
 --- !u!1 &1212934568
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,7 +933,7 @@ GameObject:
   - component: {fileID: 1212934571}
   - component: {fileID: 1212934570}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1612,3 +1613,4 @@ MonoBehaviour:
   pole: {fileID: 418368972267848977, guid: a719763fc84906e4190de236c2d50848, type: 3}
   mainMenu: {fileID: 1636156548}
   twoPlayer: {fileID: 1982714074}
+  _mainPole: {fileID: 0}
