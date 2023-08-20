@@ -22,7 +22,7 @@ public class ADV : MonoBehaviour
     {
         yield return new WaitForSeconds(330f);
        
-        YandexGame.ReviewShow(true);
+        YandexGame.ReviewShow(false);
     }
 
     private IEnumerator AdvMove()
